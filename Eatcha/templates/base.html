@@ -17,6 +17,8 @@
 
     <!-- Custom CSS -->
     <link href="{% static 'css/round-about.css' %}" rel="stylesheet">
+    <link href="{% static 'css/starrating.css' %}" rel="stylesheet">
+
     {% block css %}{% endblock css %}
     <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
     <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
@@ -53,14 +55,14 @@
                         <a href="{% url "signup" %}">회원가입</a>
                     </li>
                     <li>
-                        <a href="{% url "login" %}">로그인</a>
+                        <a href="{% url "login" %}?next={{ request.path}}">로그인</a>
                     </li>
                     {% else %}
                     <li>
                         <a href="{% url "profile" %}">프로필</a>
                     </li>
                     <li>
-                        <a href="{% url "logout" %}">로그아웃</a>
+                        <a href="{% url "logout" %}?next={{ request.path}}">로그아웃</a>
                     </li>
                     {% endif %}
                     <li>

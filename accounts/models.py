@@ -1,9 +1,12 @@
 from django.db import models
-from django.contrib.auth.models import User
 from django.conf import settings
+from django.core.validators import RegexValidator
+
 # Create your models here.
 
 class Profile(models.Model):
-    user = models.OneToOneField(settings.AUTH_USER_MODEL)   #FIXME: BAD CASE//
-    phone_number = models.CharField(max_length=20)
-    address = models.CharField(max_length=50)
+    user = models.ForeignKey(settings.AUTH_USER_MODEL)   #FIXME: BAD CASE//
+    ID = models.CharField(max_length=20)
+
+
+
