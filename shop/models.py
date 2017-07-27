@@ -10,6 +10,7 @@ class Photo(models.Model):
     date_updated = models.DateTimeField(auto_now=True)
     tags = models.CharField(max_length=100, blank=True)
     tag_set = models.ManyToManyField('Tag', blank=True)#('앱이름.tag')
+
     class Meta:
         ordering=['-id']
 

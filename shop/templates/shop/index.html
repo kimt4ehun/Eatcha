@@ -1,44 +1,23 @@
 {% extends "base.html" %}
 {% block content %}
-        <!-- Team Members Row -->
-        <div class="row">
-            <div class="col-lg-12">
-                <h2 class="page-header">샤로수길</h2>
-            </div>
-            {% for x in img %}
-            <div class="col-lg-4 col-sm-6 text-center">
-                <img class=" img-responsive img-center" src="{{ x.image.url }}"  width="300px" height="150px" alt="">
-                <h3>{{x.title}}
-                    <small>{{x.tags}}</small>
+<div class="container-fluid">
+        <div class="row fh5co-post-entry">
+    {% for x in img %}
+            <article class="col-lg-3 col-md-3 col-sm-3 col-xs-6 col-xxs-12 animate-box">
+                 <figure>
+                    <a href="post/{{x.id}}"><img src="{{ x.image.url }}" alt="Image" class="img-responsive"></a>
+                </figure>
+                <span class="fh5co-meta"><a href="single.html">{{x.tags}}</a></span>
+                <h2 class="fh5co-article-title"><a href="single.html">{{x.title}}</a></h2>
+                <span class="fh5co-meta fh5co-date">July 27th, 2017</span>
+              </article>{% endfor %}
 
+            <div class="clearfix visible-lg-block visible-md-block visible-sm-block visible-xs-block"></div>
 
-                </h3>
-
-
-            <h1>점  수</h1>
-
-           <center><fieldset class="rating">
-                <input type="radio" id="star5" name="rating" value="5" /><label class = "full" for="star5" title="Awesome - 5 stars"></label>
-
-                <input type="radio" id="star4" name="rating" value="4" /><label class = "full" for="star4" title="Pretty good - 4 stars"></label>
-
-                <input type="radio" id="star3" name="rating" value="3" /><label class = "full" for="star3" title="Meh - 3 stars"></label>
-
-                <input type="radio" id="star2" name="rating" value="2" /><label class = "full" for="star2" title="Kinda bad - 2 stars"></label>
-
-                <input type="radio" id="star1" name="rating" value="1" /><label class = "full" for="star1" title="Sucks big time - 1 star"></label>
-
-            </fieldset></center>
-
-
-
-                <br>
-                <br><pre>{{x.content}}</pre>
-
-            </div>
-
-            {% endfor %}
-
-        </div>
+    </div>
+    </div>
 
 {% endblock %}
+
+
+

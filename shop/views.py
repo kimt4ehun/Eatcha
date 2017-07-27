@@ -2,11 +2,11 @@ from django.shortcuts import get_object_or_404,  render
 from django.http import Http404
 from .models import Photo
 # Create your views here.
-#def post_list(request,id):
-#    photo = get_object_or_404(Photo, id=id)
-#
-#
-#    return render(request, 'shop/post_list.html', {'photo': photo})
+def post_(request,id):
+    photo = get_object_or_404(Photo, id=id)
+
+
+    return render(request, 'shop/post_.html', {'photo': photo})
 
 def all(request):
 
